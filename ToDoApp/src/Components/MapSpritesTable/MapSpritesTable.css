@@ -1,0 +1,15 @@
+#mapSpritesContainer {
+	overflow-y: scroll;
+	width: 224px;
+	height: 320px;
+}
+
+#mapSpritesContainer::-webkit-scrollbar {
+	display: none;
+}
+
+.sprite {
+	width: 64px;
+	margin-bottom: 15px;
+	margin-right: 5px;
+}

@@ -1,0 +1,47 @@
+#DropDown {
+	width: 48px;
+	height: 59px;
+	top: 140px;
+	left: 365px;
+	position: absolute;
+	/* animation-duration: 1.1s; */
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	z-index: 0;
+}
+
+/* #DropDown:hover {
+	background-image: url('/assets/Sprites/red_dropDown_pressed.png');
+}
+
+#DropDown {
+	background-image: url('/assets/Sprites/red_dropDown_regular.png');
+} */
+
+@keyframes dropDownAnimation {
+	0% {
+		top: 80px;
+	}
+	100% {
+		top: 140px;
+	}
+}
+
+@keyframes dropDownDeployAnimation {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(190px);
+	}
+}
+
+@keyframes dropDownPickUpAnimation {
+	0% {
+		transform: translateY(229px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}

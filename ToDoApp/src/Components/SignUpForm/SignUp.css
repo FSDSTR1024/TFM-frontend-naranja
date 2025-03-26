@@ -1,0 +1,12 @@
+#signUpInputContainer {
+	height: 500px;
+}
+
+.SignUpInputBackground {
+	background-image: url('/assets/Sprites/loginInputBg3.png');
+}
+
+#signUpForm {
+	background-image: url('/assets/Sprites/SignUpFormBg.png');
+	display: none;
+}

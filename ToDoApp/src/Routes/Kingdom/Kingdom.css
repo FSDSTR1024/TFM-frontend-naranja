@@ -1,0 +1,35 @@
+#kingdomBody {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#sprintBacklog {
+	position: absolute;
+	width: 421px;
+	height: 879px;
+	background-image: url('/assets/Sprites/SprintBacklogBg3.png');
+	background-position: center;
+	border-radius: 10px;
+	top: 5%;
+	left: 75%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: scale(0.7);
+}
+
+#columnsContainer {
+	width: 1200px;
+	height: 880px;
+	background-image: url('/assets/Sprites/columnsBg5.png');
+	background-size: cover;
+	background-position: center;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	transform: scale(0.9);
+}

@@ -1,0 +1,11 @@
+.LoginInputBackground {
+	background-image: url('/assets/Sprites/loginInputBg2.png');
+}
+
+#loginInputContainer {
+	height: 450px;
+}
+
+#loginForm {
+	background-image: url('/assets/Sprites/LoginFormBg2.png');
+}

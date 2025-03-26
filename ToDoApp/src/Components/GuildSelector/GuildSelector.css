@@ -1,0 +1,85 @@
+#swordContainer {
+	position: relative;
+	background-image: url('/assets/Sprites/guildSelectionBanner.png');
+	width: 458px;
+	height: 675px;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotateY(0deg);
+	}
+	100% {
+		transform: rotateY(360deg);
+	}
+}
+
+.sword {
+	position: absolute;
+	width: 616px;
+	height: 164px;
+	transform: scale(0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#sword1 {
+	top: 100px;
+	left: -2000px;
+	background-image: url('/assets/Sprites/sword1.png');
+}
+
+#sword2 {
+	top: 240px;
+	left: 2000px;
+	background-image: url('/assets/Sprites/sword2.png');
+}
+
+#sword3 {
+	top: 380px;
+	left: -2000px;
+	background-image: url('/assets/Sprites/sword3.png');
+}
+
+@keyframes swordAnimationLeftRight {
+	0% {
+		left: -2000px;
+	}
+	100% {
+		left: -75px;
+	}
+}
+
+@keyframes swordBounceAnimationLeftRight {
+	0% {
+		left: -75px;
+	}
+	50% {
+		left: -25px;
+	}
+	100% {
+		left: -75px;
+	}
+}
+
+@keyframes swordAnimationRightLeft {
+	0% {
+		left: 1000px;
+	}
+	100% {
+		left: -75px;
+	}
+}
+
+@keyframes swordBounceAnimationRightLeft {
+	0% {
+		left: -75px;
+	}
+	50% {
+		left: -125px;
+	}
+	100% {
+		left: -75px;
+	}
+}

@@ -1,0 +1,65 @@
+#tileResourcesContainerLeft {
+	position: absolute;
+	top: 195px;
+	left: -500px;
+	width: 567px;
+	height: 867px;
+	background-image: url('/assets/Sprites/tilesContainer.png');
+	transform: scale(0.7);
+	display: flex;
+	align-items: center;
+	transition: left 0.6s ease;
+}
+
+#tileResourcesContainerLeft.appear {
+	left: -25px;
+}
+
+#tileResourcesContainerRight {
+	position: absolute;
+	top: 195px;
+	right: -500px;
+	width: 567px;
+	height: 867px;
+	background-image: url('/assets/Sprites/tilesContainer3.png');
+	transform: scale(0.7);
+	display: flex;
+	align-items: center;
+	transition: right 0.6s ease;
+}
+
+#tileResourcesContainerRight.appear {
+	right: -25px;
+}
+
+#tileResourcesScroll {
+	position: absolute;
+	width: 576px;
+	height: 88%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-items: center;
+	align-items: center;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	transform: scale(0.7);
+}
+
+#tileResourcesScroll::-webkit-scrollbar {
+	display: none;
+}
+
+.tileBackground {
+	width: 192px;
+	height: 192px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url('/assets/Sprites/Carved.png');
+}
+
+.tileResource {
+	width: 64px;
+	height: 64px;
+	transform: scale(2.1);
+}

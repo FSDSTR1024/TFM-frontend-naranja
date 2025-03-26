@@ -1,0 +1,40 @@
+.Button {
+	position: absolute;
+	width: 178px;
+	height: 56px;
+	padding-bottom: 7px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	background: none;
+	background-size: cover;
+	border: none;
+	color: white;
+	transform: translate(-50%, -50%);
+}
+
+.Button:hover {
+	cursor: url('/assets/Sprites/cursor.png'), auto;
+}
+
+#buttonHover {
+	background-position: 0px 0px;
+	display: none;
+	position: absolute;
+	width: 256px;
+	height: 128px;
+	animation-name: buttonHoverAnimation;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: steps(2);
+}
+
+@keyframes buttonHoverAnimation {
+	0% {
+		background-position: 0px 0px;
+	}
+	100% {
+		background-position: -200% 0px;
+	}
+}

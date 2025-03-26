@@ -1,0 +1,31 @@
+.column {
+	position: relative;
+	width: 320px;
+	height: 716px;
+	background-image: url('/assets/Sprites/columnBg2.png');
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.columnTitle {
+	position: absolute;
+	top: 50px;
+	margin-bottom: 20px;
+	border-bottom: 3px solid;
+}
+
+.tasksContainer {
+	height: 500px;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 40px;
+	margin-top: 80px;
+	overflow-y: scroll;
+}
+
+.tasksContainer::-webkit-scrollbar {
+	display: none;
+}

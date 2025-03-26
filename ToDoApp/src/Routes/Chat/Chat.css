@@ -1,0 +1,76 @@
+#chatContainer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+	height: 900px;
+	width: 1000px;
+	background-image: url('/assets/Sprites/chatBg.png');
+}
+
+#messagesContainer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding: 25px 25px 25px 25px;
+	margin: 15px;
+	height: 82vh;
+	overflow-y: auto;
+}
+
+#messagesContainer::-webkit-scrollbar {
+	display: none;
+}
+
+.messageContainer {
+	display: flex;
+	align-items: flex-start;
+	gap: 15px;
+	max-width: 100%;
+}
+
+.message {
+	padding: 10px;
+	border-radius: 10px;
+	background-color: #add8e6;
+	max-width: 90%;
+	word-break: break-word;
+	overflow-wrap: break-word;
+	white-space: normal;
+	text-align: left;
+	line-height: 1.4;
+}
+
+.memberImage {
+	width: 48px;
+	height: 48px;
+	border: RGB(140, 195, 196) 3px solid;
+	border-radius: 50%;
+	background-size: cover;
+	background-position: center;
+}
+
+#inputContainer {
+	position: fixed;
+	bottom: 70px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 980px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 10px;
+	margin-left: 5px;
+	z-index: 1000;
+}
+
+#input {
+	width: 90%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 16px;
+	outline: none;
+	background-color: #f0f0f0;
+}

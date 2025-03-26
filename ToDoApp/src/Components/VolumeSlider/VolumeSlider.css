@@ -1,0 +1,32 @@
+#volumeSliderContainer {
+	margin-top: 50px;
+}
+
+#volumeSlider {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 200px;
+	height: 20px;
+	background-color: RGB(22, 28, 46);
+	border-radius: 10px;
+	outline: none;
+	transition: background-color 0.3s ease;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: RGB(225, 212, 189);
+}
+
+#volumeSlider:hover {
+	cursor: url('/assets/Sprites/cursor.png'), auto;
+}
+
+#volumeValue {
+	position: absolute;
+	margin-left: 20px;
+}

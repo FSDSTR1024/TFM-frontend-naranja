@@ -1,0 +1,65 @@
+#guildMembersPanel {
+	position: absolute;
+	bottom: 100px;
+	left: 25px;
+	background-image: url('/assets/Sprites/guildMembersPanel.png');
+	width: 370px;
+	height: 557px;
+	transform: scaleY(0);
+	transform-origin: bottom;
+	transition: transform 0.7s ease;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: flex-start;
+	gap: 15px;
+	padding: 30px;
+	overflow-y: scroll;
+}
+
+#guildMembersPanel::-webkit-scrollbar {
+	display: none;
+}
+
+#guildMembersPanel.open {
+	transform: scale(1);
+}
+
+.member {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: auto;
+	height: auto;
+	gap: 15px;
+}
+
+.memberImage {
+	width: 64px;
+	height: 64px;
+	border: RGB(140, 195, 196) 3px solid;
+	border-radius: 50%;
+	background-size: cover;
+	background-position: center;
+	flex-shrink: 0;
+}
+
+.online {
+	height: 15px;
+	width: 15px;
+	background-color: RGB(4, 170, 120);
+	border-radius: 50%;
+	position: absolute;
+	bottom: 0px;
+	left: 48px;
+}
+
+.offline {
+	height: 15px;
+	width: 15px;
+	background-color: grey;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 0px;
+	left: 48px;
+}

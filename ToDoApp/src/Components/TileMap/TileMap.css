@@ -1,0 +1,53 @@
+#tileMapContainer {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 864px;
+	height: 576px;
+	top: 335px;
+}
+
+#tileMap {
+	position: absolute;
+	width: 1920px;
+	height: 1280px;
+	transform: scale(0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.tile {
+	position: absolute;
+	background-color: transparent;
+	background-position: center;
+	width: 64px;
+	height: 64px;
+}
+
+.tile:hover {
+	box-shadow: 0 0 30px 15px white;
+}
+
+.tileAnimation {
+	animation-name: tileAnimation;
+	animation-duration: 0.5s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes tileAnimation {
+	0% {
+		transform: scale(1);
+	}
+	33% {
+		transform: scale(0.7, 1);
+	}
+	66% {
+		transform: scale(1, 0.9);
+	}
+	100% {
+		transform: scale(1);
+	}
+}

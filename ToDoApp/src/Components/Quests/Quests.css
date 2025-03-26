@@ -1,0 +1,21 @@
+.bigSword {
+	background-image: url('/assets/Sprites/bigsword.png');
+	width: 640px;
+	height: 1024px;
+	transform: scale(0.75, 0.9);
+}
+
+#questsContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.board {
+	position: absolute;
+	top: 150px;
+	width: 1472px;
+	height: 768px;
+	background-image: url('/assets/Sprites/board.png');
+	transform: scale(1);
+}

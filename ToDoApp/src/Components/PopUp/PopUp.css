@@ -1,0 +1,35 @@
+#popupContainer {
+	position: absolute;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+#popup {
+	position: absolute;
+	top: 350px;
+	left: 50%;
+	transform: translateX(-50%) scaleY(0);
+	width: 500px;
+	height: 219px;
+	background-image: url('/assets/Sprites/infoPanelHorizontal.png');
+	transform-origin: center;
+	transition: transform 0.7s ease;
+	display: flex;
+	justify-content: center;
+	align-items: start;
+}
+
+#popup.open {
+	transform: translateX(-50%) scale(1);
+}
+
+#popupText {
+	text-align: justify;
+	font-size: 23px;
+	line-height: 40px;
+	margin-top: 0px;
+	padding: 40px;
+}

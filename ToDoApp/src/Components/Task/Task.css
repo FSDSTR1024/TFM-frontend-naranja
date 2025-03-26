@@ -1,0 +1,20 @@
+.task {
+	position: relative;
+	width: 242px;
+	height: 71px;
+	background-image: url('/assets/Sprites/taskBg.png');
+	flex-shrink: 0;
+}
+
+.taskText {
+	position: absolute;
+	width: 140px;
+	text-align: left;
+	text-wrap: nowrap;
+	overflow: hidden;
+	left: 35px;
+	top: 24px;
+	border-bottom: 3px solid;
+	display: block;
+	text-overflow: ellipsis;
+}

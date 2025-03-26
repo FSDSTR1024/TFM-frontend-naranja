@@ -1,0 +1,163 @@
+#createTaskContainer {
+	position: absolute;
+	background-color: rgba(40, 40, 40, 0.6);
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 50;
+	transform: scale(0);
+	transition: transform 0s ease-in-out;
+}
+
+#createTaskContainer.appear {
+	transform: scale(1);
+}
+
+#createTask {
+	position: relative;
+	background-image: url('/assets/Sprites/createTaskBg.png');
+	width: 621px;
+	height: 503px;
+	transform: scale(0);
+	transition: transform 0.65s ease-out;
+}
+
+#createTask.appear {
+	transform: scale(1);
+}
+
+#taskName {
+	position: absolute;
+	top: 60px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: none;
+	border: none;
+	width: 400px;
+	padding: 5px;
+	text-align: left;
+	text-wrap: nowrap;
+	overflow: hidden;
+	border-bottom: 3px solid;
+	display: block;
+	text-overflow: ellipsis;
+}
+
+#taskName:focus {
+	outline: none;
+}
+
+#ownersContainer {
+	position: absolute;
+	top: 30%;
+	left: 45%;
+	transform: translateY(-50%);
+	width: 255px;
+	height: 70px;
+	background-image: url('/assets/Sprites/taskOwnersBg.png');
+	padding: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#owners {
+	width: 78%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	gap: 20px;
+}
+
+#owners::-webkit-scrollbar {
+	height: 4px;
+}
+
+#owners::-webkit-scrollbar-track:hover {
+	background: RGB(180, 167, 148);
+	border-radius: 10px;
+}
+
+#owners::-webkit-scrollbar-thumb {
+	background: RGB(117, 117, 117);
+	border-radius: 10px;
+}
+
+#taskDescriptionContainer {
+	position: absolute;
+	top: 41%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-image: url('/assets/Sprites/taskDescriptionBg.png');
+	width: 450px;
+	height: 170px;
+	padding: 25px 15px;
+}
+
+#taskDescription {
+	width: 100%;
+	height: 100%;
+	border: none;
+	background: none;
+	display: block;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+	overflow: auto;
+	resize: none;
+}
+
+#taskDescription:focus {
+	outline: none;
+}
+
+#taskDescription::-webkit-scrollbar {
+	display: none;
+}
+
+#pointsContainer {
+	position: absolute;
+	bottom: 40px;
+	left: 86px;
+	width: 449px;
+	height: 93px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#ownersPanelContainer {
+	position: absolute;
+	bottom: 220px;
+	left: 200px;
+	background-image: url('/assets/Sprites/ownersPanelBg.png');
+	width: 370px;
+	height: 503px;
+	transform: scaleY(0);
+	transform-origin: bottom;
+	transition: transform 0.7s ease;
+	padding: 40px;
+}
+
+#ownersPanelContainer.open {
+	transform: scale(1);
+}
+
+#ownersPanel {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: flex-start;
+	gap: 15px;
+	overflow-y: scroll;
+}
+
+#ownersPanel::-webkit-scrollbar {
+	display: none;
+}

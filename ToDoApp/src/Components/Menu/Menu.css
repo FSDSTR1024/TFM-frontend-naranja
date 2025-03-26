@@ -1,0 +1,16 @@
+#menuContainer {
+	position: absolute;
+	background-image: url('/assets/Sprites/menubg.png');
+	background-size: cover;
+	background-position: top;
+	width: 960px;
+	height: 250px;
+	transform: scale(0.85, 0);
+	top: 0px;
+	transition: transform 0.7s 0.4s ease, top 0.7s 0.4s ease;
+}
+
+#menuContainer.open {
+	transform: scale(0.85, 0.85);
+	top: 45px;
+}

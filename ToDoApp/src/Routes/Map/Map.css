@@ -1,0 +1,200 @@
+#mapBody {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+}
+
+#kingdomsContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: flex-start;
+	gap: 80px;
+	height: 900px;
+	width: 900px;
+	overflow-y: scroll;
+}
+
+#kingdomsContainer::-webkit-scrollbar {
+	width: 6px;
+}
+
+#kingdomsContainer::-webkit-scrollbar-track:hover {
+	background: RGB(22, 28, 46);
+	border-radius: 10px;
+}
+
+#kingdomsContainer::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.6);
+	border-radius: 10px;
+}
+
+#kingdomsContainer::-webkit-scrollbar-thumb:hover {
+	background: RGB(225, 212, 189);
+}
+
+.kingdomContainer {
+	position: relative;
+	width: 330px;
+	height: 330px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 50px;
+}
+
+.kingdom {
+	height: 330px;
+	width: 330px;
+	background-size: cover;
+	transform: scale(0) translateZ(-500px);
+	animation: kingdomAnimation 0.5s ease-out forwards;
+	animation-iteration-count: 1;
+}
+
+.KingdomNameInput {
+	position: absolute;
+	background: none;
+	border: none;
+	width: 616px;
+	height: 164px;
+	background-image: url('/assets/Sprites/loginInputBg2.png');
+	font-size: 48px;
+	text-align: center;
+	color: white;
+	transform: translate(-50%) scale(0.5);
+	left: 50%;
+	bottom: -130px;
+}
+
+.KingdomNameInput:hover {
+	cursor: url('/assets/Sprites/cursor.png'), auto;
+}
+
+@keyframes kingdomAnimation {
+	0% {
+		transform: scale(0) translateZ(-500px);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1) translateZ(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes rubberband {
+	0% {
+		transform: scale(1, 1);
+	}
+
+	30% {
+		transform: scale(1.1, 0.85);
+	}
+
+	40% {
+		transform: scale(0.85, 1.1);
+	}
+
+	50% {
+		transform: scale(1.15, 0.85);
+	}
+
+	65% {
+		transform: scale(0.95, 1.05);
+	}
+
+	75% {
+		transform: scale(1.05, 0.95);
+	}
+
+	100% {
+		transform: scale(1, 1);
+	}
+}
+
+#newKingdom {
+	background-image: url('/assets/Sprites/newIsland.png');
+}
+
+#newKingdom:hover {
+	background-image: url('/assets/Sprites/newIsland.gif');
+	cursor: url('/assets/Sprites/cursor.png'), auto;
+}
+
+#KingdomSelectionContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(40, 40, 40, 0.6);
+	transform: scale(0);
+	transition: transform 0s ease-in-out;
+}
+
+#KingdomSelectionContainer.appear {
+	transform: scale(1);
+}
+
+#AppearContainer {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transform: scale(0);
+	transition: transform 0.65s ease-out;
+}
+
+#AppearContainer.appear {
+	transform: scale(1);
+}
+
+#KingdomSelectionBg {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding-top: 50px;
+	gap: 70px;
+	background-image: url('/assets/Sprites/MapSelection2.png');
+	transform: scale(0.85);
+	width: 1320px;
+	height: 500px;
+}
+
+.KingdomItem {
+	height: 250px;
+	width: 250px;
+	background-position: center;
+	background-size: cover;
+	transition: transform 0.3s ease-in-out;
+}
+
+.KingdomItem:hover {
+	transform: scale(1.2);
+}
+
+#KingdomNameInput {
+	background: none;
+	border: none;
+	width: 616px;
+	height: 164px;
+	transform: scale(0.5);
+	background-image: url('/assets/Sprites/loginInputBg2.png');
+	font-size: 48px;
+	padding-left: 30px;
+	padding-right: 150px;
+	color: white;
+}
+
+#KingdomNameInput:hover {
+	cursor: url('/assets/Sprites/cursor.png'), auto;
+}

@@ -1,0 +1,28 @@
+#mouseRightClick {
+	position: absolute;
+	background-image: url('/assets/Sprites/mouse-click-spritesheet.png');
+	z-index: 99;
+	width: 160px;
+	height: 200px;
+	transform: scale(0.4);
+	animation-name: mouseRightClickAnimation;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: steps(2);
+}
+
+@keyframes mouseRightClickAnimation {
+	0% {
+		background-position: 0px 0px;
+	}
+	100% {
+		background-position: 320px 0px;
+	}
+}
+
+#mouseRightClickText {
+	color: RGB(145, 135, 220);
+	margin: 150px;
+	font-size: 60px;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,9 @@
+#settingsContainer {
+	position: absolute;
+	top: 480px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 384px;
+	height: 200px;
+}
