@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-	baseURL: import.meta.env.BACKEND_API_URL,
+	baseURL: 'https://tfm-backend-naranja.onrender.com',
 	headers: {
 		'Content-Type': 'application/json',
 		Authorization: `Bearer ${localStorage.getItem('token')}`,
