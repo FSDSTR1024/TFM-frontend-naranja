@@ -32,7 +32,8 @@ export const Kingdom = () => {
 
 	useEffect(() => {
 		if (location.pathname === '/kingdom/' + kingdomId) {
-			setLoaded(true);
+			setLoaded(false);
+			setTimeout(() => setLoaded(true), 200);
 		}
 	}, [location.pathname]);
 
