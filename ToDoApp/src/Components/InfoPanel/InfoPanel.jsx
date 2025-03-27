@@ -45,7 +45,6 @@ export const InfoPanel = ({ openInfoPanel, infoPanelPosition, id }) => {
 												globalContext.updateMembers(response.data.membersInfo);
 												globalContext.setGuildInfo(guildInfo);
 												if (kingdomIds.length > 0) {
-													console.log('hay');
 													KingdomsAPI.getKingdoms(kingdomIds).then((response) => {
 														if (response.status === 200) {
 															globalContext.setKingdomsInfo(response.data.kingdoms);
@@ -53,7 +52,6 @@ export const InfoPanel = ({ openInfoPanel, infoPanelPosition, id }) => {
 														}
 													});
 												} else {
-													console.log('no hay');
 													globalContext.setKingdomsInfo([]);
 													navigate(`/home`);
 												}

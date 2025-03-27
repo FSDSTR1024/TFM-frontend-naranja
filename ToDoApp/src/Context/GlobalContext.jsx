@@ -106,13 +106,13 @@ export const GlobalProvider = ({ children }) => {
 	};
 
 	const userRegisterInGuild = (guildname) => {
-		socketRef.current = io('http://localhost:3000');
+		socketRef.current = io(import.meta.env.BACKEND_API_URL);
 		socketRef.current.emit('userRegistered', guildname, userInfo.id, userInfo.username);
 	};
 
 	const userJoinToGuild = () => {
 		//PONER EN .ENV
-		socketRef.current = io('http://localhost:3000');
+		socketRef.current = io(import.meta.env.BACKEND_API_URL);
 		socketRef.current.emit('joinGuild', guildInfo.guildname, userInfo.id);
 
 		socketRef.current.on('newUser', (userId, username) => {
