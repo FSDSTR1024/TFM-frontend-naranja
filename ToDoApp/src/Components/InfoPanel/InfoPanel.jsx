@@ -38,18 +38,23 @@ export const InfoPanel = ({ openInfoPanel, infoPanelPosition, id }) => {
 							onClick={() => {
 								GuildsAPI.getSearchedGuild(guild, true).then((response) => {
 									if (response.status === 200) {
+										console.log(response.data);
 										const guildInfo = { guildname: response.data.guildname, tilemap: response.data.tilemap, userIds: response.data.userIds, chat: response.data.chat };
 										const kingdomIds = response.data.kingdomIds;
 										UserAPI.getMembersInfo(response.data.userIds).then((response) => {
 											if (response.status === 200) {
 												globalContext.updateMembers(response.data.membersInfo);
 												globalContext.setGuildInfo(guildInfo);
-												KingdomsAPI.getKingdoms(kingdomIds).then((response) => {
-													if (response.status === 200) {
-														globalContext.setKingdomsInfo(response.data.kingdoms);
-														navigate(`/home`);
-													}
-												});
+												if (kingdomIds.length > 0) {
+													KingdomsAPI.getKingdoms(kingdomIds).then((response) => {
+														if (response.status === 200) {
+															globalContext.setKingdomsInfo(response.data.kingdoms);
+															navigate(`/home`);
+														}
+													});
+												} else {
+													navigate(`/home`);
+												}
 											}
 										});
 									}
