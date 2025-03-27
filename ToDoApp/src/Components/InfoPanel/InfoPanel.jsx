@@ -53,6 +53,7 @@ export const InfoPanel = ({ openInfoPanel, infoPanelPosition, id }) => {
 														}
 													});
 												} else {
+													globalContext.setKingdomsInfo([]);
 													navigate(`/home`);
 												}
 											}
