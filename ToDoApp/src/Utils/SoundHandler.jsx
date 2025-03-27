@@ -7,6 +7,8 @@ export function useSoundHandler() {
 
 	const playSound = (soundPath) => {
 		if (soundRef.current) {
+			soundRef.current.pause();
+			soundRef.current.currentTime = 0;
 			soundRef.current.src = soundPath;
 			soundRef.current.volume = globalContext.mute ? 0 : globalContext.volume;
 			soundRef.current.play();
