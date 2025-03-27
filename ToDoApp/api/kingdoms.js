@@ -10,7 +10,8 @@ export const KingdomsAPI = {
 	async getKingdoms(kingdomsIds) {
 		if (kingdomsIds.length === 0) {
 			localStorage.setItem('kingdoms', JSON.stringify([]));
-			return;
+			const response = { status: 200 };
+			return response;
 		} else {
 			const response = await api.get(`/user/guilds/kingdoms/getKingdoms`, {
 				params: { kingdomsIds },
