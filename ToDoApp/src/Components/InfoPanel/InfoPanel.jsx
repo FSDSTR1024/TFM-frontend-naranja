@@ -46,8 +46,8 @@ export const InfoPanel = ({ openInfoPanel, infoPanelPosition, id }) => {
 												globalContext.setGuildInfo(guildInfo);
 												KingdomsAPI.getKingdoms(kingdomIds).then((response) => {
 													if (response.status === 200) {
-														if (response.data.kingdoms.length > 0) globalContext.setKingdoms(response.data.kingdoms);
-														else globalContext.setKingdoms([]);
+														if (kingdomIds.length > 0) globalContext.setKingdomsInfo(response.data.kingdoms);
+														else globalContext.setKingdomsInfo([]);
 														navigate(`/home`);
 													}
 												});

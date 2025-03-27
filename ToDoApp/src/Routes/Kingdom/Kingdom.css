@@ -11,14 +11,20 @@
 	width: 421px;
 	height: 879px;
 	background-image: url('/assets/Sprites/SprintBacklogBg3.png');
-	background-position: center;
+	background-position: left;
 	border-radius: 10px;
 	top: 5%;
-	left: 75%;
+	left: 50%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transform: scale(0);
+	transition: transform 0.7s ease 0.7s, left 0.7s ease 1s;
+}
+
+#sprintBacklog.open {
 	transform: scale(0.7);
+	left: 75%;
 }
 
 #columnsContainer {
@@ -31,5 +37,10 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	transform: scale(0);
+	transition: transform 0.7s ease;
+}
+
+#columnsContainer.open {
 	transform: scale(0.9);
 }

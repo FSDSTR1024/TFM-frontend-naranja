@@ -7,6 +7,11 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	transform: scale(1, 0);
+}
+
+.column.open {
+	transform: scale(1);
 }
 
 .columnTitle {
@@ -27,5 +32,19 @@
 }
 
 .tasksContainer::-webkit-scrollbar {
+	display: none;
+}
+
+.backlogTasksContainer {
+	height: 420px;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 40px;
+	margin-top: 200px;
+	overflow-y: scroll;
+}
+
+.backlogTasksContainer::-webkit-scrollbar {
 	display: none;
 }

@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { NavigateLogo } from '../../Components/NavigateLogo/NavigateLogo';
 import { useState, useContext, useEffect } from 'react';
 import { Column } from '../../Components/Column/Column';
@@ -13,6 +13,7 @@ import './Kingdom.css';
 
 export const Kingdom = () => {
 	const globalContext = useContext(GlobalContext);
+	const location = useLocation();
 
 	const { kingdomId } = useParams();
 	const [kingdomInfo, setKingdomInfo] = useState(null);
@@ -22,10 +23,18 @@ export const Kingdom = () => {
 	const [appear, setAppear] = useState(false);
 	const [taskInfoForPanel, setTaskInfoForPanel] = useState(null);
 
+	const [loaded, setLoaded] = useState(false);
+
 	useEffect(() => {
 		const foundKingdom = globalContext.kingdomsInfo.find((kingdom) => kingdom._id === kingdomId);
 		setKingdomInfo(foundKingdom);
 	}, []);
+
+	useEffect(() => {
+		if (location.pathname === '/kingdom/' + kingdomId) {
+			setLoaded(true);
+		}
+	}, [location.pathname]);
 
 	useEffect(() => {
 		if (kingdomInfo) {
@@ -100,31 +109,31 @@ export const Kingdom = () => {
 
 			<Profile></Profile>
 
-			<div id="sprintBacklog">
-				<Column title="Backlog" state="backlog" tasks={tasks} moveTask={moveTask} setTaskInfoForPanel={setTaskInfoForPanel} setAppear={setAppear}></Column>
+			<div id="sprintBacklog" className={loaded ? 'open' : ''}>
+				<Column title="Backlog" state="backlog" tasks={tasks} moveTask={moveTask} setTaskInfoForPanel={setTaskInfoForPanel} setAppear={setAppear} loaded={loaded} delay="2.4s"></Column>
+
+				<Button
+					text=""
+					backgroundImage="/assets/Sprites/addTaskButton2.png"
+					backgroundImageHover="/assets/Sprites/addTaskButtonHover.png"
+					backgroundImageHoverAnimation="/assets/Sprites/menuButtonHoverAnimation2.png"
+					width="64px"
+					height="64px"
+					widthHoverAnimation="96px"
+					heightHoverAnimation="96px"
+					top="30%"
+					left="50%"
+					onClick={() => {
+						setAppear(true);
+					}}
+				></Button>
 			</div>
 
-			<div id="columnsContainer">
-				<Column title="To Do" state="todo" tasks={tasks.filter((t) => t.taskState === 'todo')} moveTask={moveTask} setTaskInfoForPanel={setTaskInfoForPanel} setAppear={setAppear} />
-				<Column title="In Progress" state="inProgress" tasks={tasks.filter((t) => t.taskState === 'inProgress')} moveTask={moveTask} setTaskInfoForPanel={setTaskInfoForPanel} setAppear={setAppear} />
-				<Column title="Done" state="done" tasks={tasks.filter((t) => t.taskState === 'done')} moveTask={moveTask} setTaskInfoForPanel={setTaskInfoForPanel} setAppear={setAppear} />
+			<div id="columnsContainer" className={loaded ? 'open' : ''}>
+				<Column title="To Do" state="todo" tasks={tasks.filter((t) => t.taskState === 'todo')} moveTask={moveTask} setTaskInfoForPanel={setTaskInfoForPanel} setAppear={setAppear} loaded={loaded} delay="1.2s" />
+				<Column title="In Progress" state="inProgress" tasks={tasks.filter((t) => t.taskState === 'inProgress')} moveTask={moveTask} setTaskInfoForPanel={setTaskInfoForPanel} setAppear={setAppear} loaded={loaded} delay="1.6s" />
+				<Column title="Done" state="done" tasks={tasks.filter((t) => t.taskState === 'done')} moveTask={moveTask} setTaskInfoForPanel={setTaskInfoForPanel} setAppear={setAppear} loaded={loaded} delay="2s" />
 			</div>
-
-			<Button
-				text=""
-				backgroundImage="/assets/Sprites/addTaskButton.png"
-				backgroundImageHover="/assets/Sprites/addTaskButtonHover.png"
-				backgroundImageHoverAnimation="/assets/Sprites/menuButtonHoverAnimation2.png"
-				width="64px"
-				height="64px"
-				widthHoverAnimation="96px"
-				heightHoverAnimation="96px"
-				top="55%"
-				left="95%"
-				onClick={() => {
-					setAppear(true);
-				}}
-			></Button>
 
 			<TaskPanel appear={appear} setAppear={setAppear} task={taskInfoForPanel} setTaskInfoForPanel={setTaskInfoForPanel} handleSaveTask={handleSaveTask} handleDeleteTask={handleDeleteTask}></TaskPanel>
 		</div>
