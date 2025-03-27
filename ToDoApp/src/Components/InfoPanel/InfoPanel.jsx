@@ -38,7 +38,6 @@ export const InfoPanel = ({ openInfoPanel, infoPanelPosition, id }) => {
 							onClick={() => {
 								GuildsAPI.getSearchedGuild(guild, true).then((response) => {
 									if (response.status === 200) {
-										console.log(response.data);
 										const guildInfo = { guildname: response.data.guildname, tilemap: response.data.tilemap, userIds: response.data.userIds, chat: response.data.chat };
 										const kingdomIds = response.data.kingdomIds;
 										UserAPI.getMembersInfo(response.data.userIds).then((response) => {
@@ -46,6 +45,7 @@ export const InfoPanel = ({ openInfoPanel, infoPanelPosition, id }) => {
 												globalContext.updateMembers(response.data.membersInfo);
 												globalContext.setGuildInfo(guildInfo);
 												if (kingdomIds.length > 0) {
+													console.log('hay');
 													KingdomsAPI.getKingdoms(kingdomIds).then((response) => {
 														if (response.status === 200) {
 															globalContext.setKingdomsInfo(response.data.kingdoms);
@@ -53,6 +53,7 @@ export const InfoPanel = ({ openInfoPanel, infoPanelPosition, id }) => {
 														}
 													});
 												} else {
+													console.log('no hay');
 													globalContext.setKingdomsInfo([]);
 													navigate(`/home`);
 												}
