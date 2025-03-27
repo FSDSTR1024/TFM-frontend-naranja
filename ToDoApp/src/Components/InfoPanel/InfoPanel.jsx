@@ -44,17 +44,12 @@ export const InfoPanel = ({ openInfoPanel, infoPanelPosition, id }) => {
 											if (response.status === 200) {
 												globalContext.updateMembers(response.data.membersInfo);
 												globalContext.setGuildInfo(guildInfo);
-												if (kingdomIds.length > 0) {
-													KingdomsAPI.getKingdoms(kingdomIds).then((response) => {
-														if (response.status === 200) {
-															globalContext.setKingdomsInfo(response.data.kingdoms);
-															navigate(`/home`);
-														}
-													});
-												} else {
-													globalContext.setKingdomsInfo([]);
-													navigate(`/home`);
-												}
+												KingdomsAPI.getKingdoms(kingdomIds).then((response) => {
+													if (response.status === 200) {
+														globalContext.setKingdomsInfo(response.data.kingdoms);
+														navigate(`/home`);
+													}
+												});
 											}
 										});
 									}

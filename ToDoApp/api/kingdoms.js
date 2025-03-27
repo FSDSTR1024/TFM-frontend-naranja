@@ -3,20 +3,21 @@ import { api } from './api.js';
 export const KingdomsAPI = {
 	async registerKingdom(kingdomName, backgroundImage, hoverBackgroundImage) {
 		const response = await api.post('/user/guilds/kingdoms/registerKingdom', { kingdomName, backgroundImage, hoverBackgroundImage });
-
-		const kingdoms = JSON.parse(localStorage.getItem('kingdoms'));
-		if (kingdoms.length === 0) localStorage.setItem('kingdoms', JSON.stringify([response.data.kingdom]));
-		else localStorage.setItem('kingdoms', JSON.stringify([...kingdoms, response.data.kingdom]));
-
+		localStorage.setItem('kingdoms', JSON.stringify([...JSON.parse(localStorage.getItem('kingdoms')), response.data.kingdom]));
 		return response;
 	},
 
 	async getKingdoms(kingdomsIds) {
-		const response = await api.get(`/user/guilds/kingdoms/getKingdoms`, {
-			params: { kingdomsIds },
-		});
-		localStorage.setItem('kingdoms', JSON.stringify(response.data.kingdoms));
-		return response;
+		if (kingdomsIds.length === 0) {
+			localStorage.setItem('kingdoms', JSON.stringify([]));
+			return;
+		} else {
+			const response = await api.get(`/user/guilds/kingdoms/getKingdoms`, {
+				params: { kingdomsIds },
+			});
+			localStorage.setItem('kingdoms', JSON.stringify(response.data.kingdoms));
+			return response;
+		}
 	},
 
 	async updateKingdom(id, kingdomName, backgroundImage, hoverBackgroundImage) {
