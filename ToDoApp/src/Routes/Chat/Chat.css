@@ -3,9 +3,10 @@
 	display: flex;
 	flex-direction: column;
 	margin-top: 10px;
+	margin-left: 50px;
 	height: 900px;
-	width: 1000px;
-	background-image: url('/assets/Sprites/chatBg.png');
+	width: 1100px;
+	background-image: url('/assets/Sprites/chatBg2.png');
 }
 
 #messagesContainer {
@@ -14,8 +15,8 @@
 	flex-direction: column;
 	gap: 15px;
 	padding: 25px 25px 25px 25px;
-	margin: 15px;
-	height: 82vh;
+	margin: 35px;
+	height: 78vh;
 	overflow-y: auto;
 }
 
@@ -33,7 +34,7 @@
 .message {
 	padding: 10px;
 	border-radius: 10px;
-	background-color: #add8e6;
+	background-color: RGB(158, 125, 103);
 	max-width: 90%;
 	word-break: break-word;
 	overflow-wrap: break-word;
@@ -54,7 +55,7 @@
 #inputContainer {
 	position: fixed;
 	bottom: 70px;
-	left: 50%;
+	left: 52%;
 	transform: translateX(-50%);
 	width: 980px;
 	display: flex;
@@ -66,11 +67,13 @@
 }
 
 #input {
-	width: 90%;
-	padding: 10px;
-	border: 1px solid #ccc;
+	width: 864px;
+	height: 71px;
+	padding: 10px 30px;
+	border: none;
 	border-radius: 5px;
 	font-size: 16px;
 	outline: none;
-	background-color: #f0f0f0;
+	background: none;
+	background-image: url('/assets/Sprites/inputChatBg.png');
 }

@@ -30,6 +30,24 @@ export const TileResourcesContainer = ({ canEdit }) => {
 			tileImg: '/assets/Sprites/tiles/bottomRightGrass.png',
 		},
 		{
+			tileImg: '/assets/Sprites/tiles/topRightSand.png',
+		},
+		{
+			tileImg: '/assets/Sprites/tiles/centerTopSand.png',
+		},
+		{
+			tileImg: '/assets/Sprites/tiles/topLeftSand.png',
+		},
+		{
+			tileImg: '/assets/Sprites/tiles/centerLeftSand.png',
+		},
+		{
+			tileImg: '/assets/Sprites/tiles/centerSand.png',
+		},
+		{
+			tileImg: '/assets/Sprites/tiles/centerRightSand.png',
+		},
+		{
 			tileImg: '/assets/Sprites/tiles/bottomLeftSand.png',
 		},
 		{
@@ -42,7 +60,22 @@ export const TileResourcesContainer = ({ canEdit }) => {
 
 	const movingTiles = [
 		{
+			tileImg: './assets/Sprites/tiles/sheep.gif',
+		},
+		{
 			tileImg: './assets/Sprites/tiles/bwarriorIdle.gif',
+		},
+		{
+			tileImg: '/assets/Sprites/tiles/foamRight.gif',
+		},
+		{
+			tileImg: '/assets/Sprites/tiles/foamTop.gif',
+		},
+		{
+			tileImg: '/assets/Sprites/tiles/foamBottom.gif',
+		},
+		{
+			tileImg: '/assets/Sprites/tiles/foamLeft.gif',
 		},
 	];
 

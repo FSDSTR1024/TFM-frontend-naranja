@@ -48,6 +48,7 @@ export const InfoPanel = ({ openInfoPanel, infoPanelPosition, id }) => {
 													if (response.status === 200) {
 														if (kingdomIds.length > 0) globalContext.setKingdomsInfo(response.data.kingdoms);
 														else globalContext.setKingdomsInfo([]);
+														globalContext.socketRef.current.emit('joinGuild', guildInfo.guildname, globalContext.userInfo.id);
 														navigate(`/home`);
 													}
 												});

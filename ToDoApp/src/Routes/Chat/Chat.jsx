@@ -35,6 +35,7 @@ export const Chat = () => {
 				msg: message,
 				profileImage: globalContext.userInfo.profileImage ? globalContext.userInfo.profileImage : 'https://res.cloudinary.com/guild-tasks/image/upload/v1739385954/defaultProfileImage_vzujwf.png',
 			});
+			console.log('Mensaje enviado:', message);
 			inputRef.current.value = '';
 		}
 	};
